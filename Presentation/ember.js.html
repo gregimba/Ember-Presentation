@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Monkeying around with client-side MVC</title>
+	
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="core/deck.core.css">
+	
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="themes/style/swiss.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+	
+	<!-- Required Modernizr file -->
+	<script src="modernizr.custom.js"></script>
+
+
+</head>
+<body class="deck-container">
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+	<h1>Client Side MVC:</h1>
+</section>
+
+<section class="slide">
+	<h2>Defining Client Side MVC:</h2>
+	<ol>
+		<li>A user performs an action such as typing on the keyboard or clicking a mouse button.</li>
+		<li>The Controller receives that input and fires off a message to the Model.</li>
+		<li>The Model changes its content based on the message (deletes a row or updates shopping cart quantities).</li>
+		<li>The View watches for a change in the Model and updates the user interface accordingly.</li>
+	</ol>
+</section>
+
+<section class="slide">
+<script src="https://gist.github.com/gregimba/5140337.js"></script>
+</section>
+
+<section class="slide">
+	<h2>Core Concepts of Ember:</h2>
+	<ul>
+		<li><h3>Templates:</h3>
+			<p>A template, written in the Handlebars templating language, describes the user interface of your application. </p>
+		</li>
+		<li><h3>Views:</h3>
+			<p>A view is embedded inside a template and is responsible for translating primitive events (like clicks, taps, and swipes) into semantic events that have meaning to your application and are sent to the controller.</p>
+		</li>
+		<li><h3>Controllers:</h3>
+			<p>A controller is an object that stores application state. Controllers often act as representations of models for templates.</p>
+		</li>
+		<li><h3>Models:</h3>
+			<p>A model is an object that stores persistent state using Ember Data.</p>
+			</li>
+		<li><h3>Routers:</h3>
+			<p>The router is the object responsible for managing application state. Deals with routes as you change application state.</p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Naming Conventions:</h2>
+	<ul>
+		<li><h4>Model => App.Table</h4></li>
+		<li><h4>View => App.TablesView</h4></li>
+		<li><h4>Template => tables</h4></li>
+		<li><h4>Controller => App.TablesController</h4></li>
+		<li><h4>Router => App.TablesRoute</h4></li>
+	</ul>
+</section>
+
+<section class="slide">
+	<h2>Controllers in Ember.js</h2>
+	<script src="https://gist.github.com/gregimba/5140019.js"></script>
+</section>
+
+
+<section class="slide">
+	<h2>Controller demo</h2>
+	<iframe src="http://127.0.0.1:5000/"></iframe>
+</section>
+
+<section class="slide">
+	<h2>Routes in Ember.js</h2>
+	<script src="https://gist.github.com/gregimba/5140317.js"></script>
+</section>
+
+
+
+
+<section class="slide">
+	<img src="http://www.levihackwith.com/wp-content/uploads/2013/02/mustache.jpg">
+	<h1>Handlebars.js and templating</h1>
+</section>
+
+<section class="slide">
+	<h2>What is Handlebars?</h2>
+	<h4>It is just an extension of Mustache</h4>	
+</section>
+
+<section class="slide">
+	<h2>Helpers in Handlebars</h2>
+	<script src="https://gist.github.com/gregimba/5130893.js"></script>
+</section>
+
+<section class="slide">
+	<h2>Views in Ember.js</h2>
+	<img src="http://emberjs.com/guides/views/images/primitive-to-semantic-event.png">
+</section>
+
+<section class="slide">
+	<h1>Ember Data</h1>
+</section>
+
+<section class="slide">
+	<h1>Ember + Rails</h1>
+</section>
+
+
+<section class="slide">
+	<h1>The Roundup</h1>
+</section>
+
+<section class="slide">
+	<h2>Pro's</h2>
+	<ul>Client Side</ul>
+	<ul>Fast Development time</ul>
+	<ul>Memory Managment</ul>
+	<ul>For full apps unlike backbone.js</ul>
+</section>
+
+<section class="slide">
+	<h2>Con's</h2>
+	<ul>Client Side - Weird Bugs</ul>
+	<ul>Slow learning cuve</ul>
+	<ul>Overkill for smaller apps</ul>
+</section>
+
+
+
+
+
+
+
+<!-- End slides. -->
+
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="core/deck.core.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
