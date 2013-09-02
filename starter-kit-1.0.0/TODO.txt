@@ -9,8 +9,6 @@
 
 Your Ember.js project is almost ready! Here's how to get started:
 
-- Run server.sh to start your development server. 
-
 - Start writing your app in js/app.js.
 
 - Describe your application HTML in index.html.
